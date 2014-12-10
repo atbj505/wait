@@ -1,0 +1,33 @@
+//
+//  PrefixHeader.pch
+//  wait
+//
+//  Created by 杨启晖 on 14/12/10.
+//  Copyright (c) 2014年 telcolor. All rights reserved.
+//
+
+#ifndef wait_PrefixHeader_pch
+#define wait_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "QBaseFramework.h"
+#import "UIColor+hexColor.h"
+#import "Masonry.h"
+#import "TitleView.h"
+
+#define MAINCONFIG @"http://42.62.8.172/zp-core/interface/maiconfig.php?var=%@"
+#define VERSION @"dd_1"
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+#define BACKIMAGE @"yemian.png"
+#define FONT(x) [UIFont fontWithName:@"Heiti SC" size:x]
+
+#define NAVICOLOR [UIColor hexColor:@"6c6786"]
+
+#endif
+#endif

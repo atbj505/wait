@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6E7D05CA-A3FF-4A01-8C74-7BD7FABA2E64</string>
+	<key>IDESourceControlProjectName</key>
+	<string>wait</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>834011C228D4AD5304768FD18F08A473BE144256</key>
+		<string>https://github.com/atbj505/SILK-S-iOS.git</string>
+		<key>F23F6BB81606DE58AA8F2B9491A8F0EC98CF88C9</key>
+		<string>github.com:atbj505/wait.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>wait/wait.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>834011C228D4AD5304768FD18F08A473BE144256</key>
+		<string>../../../..</string>
+		<key>F23F6BB81606DE58AA8F2B9491A8F0EC98CF88C9</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:atbj505/wait.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F23F6BB81606DE58AA8F2B9491A8F0EC98CF88C9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>834011C228D4AD5304768FD18F08A473BE144256</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F23F6BB81606DE58AA8F2B9491A8F0EC98CF88C9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>wait</string>
+		</dict>
+	</array>
+</dict>
+</plist>
