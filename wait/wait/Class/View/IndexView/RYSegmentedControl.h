@@ -10,7 +10,9 @@
 #import "RYTableView.h"
 #import "CatelogTableViewCell.h"
 
-@interface RYSegmentedControl : HMSegmentedControl
+@interface RYSegmentedControl : UIView
+
+@property (nonatomic, strong)HMSegmentedControl *segmented;
 
 @property (nonatomic, strong)UIScrollView *scrollView;
 

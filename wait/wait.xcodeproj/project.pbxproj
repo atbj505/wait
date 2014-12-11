@@ -208,6 +208,12 @@
 		57D2498E1A3847500009910F /* CatelogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D2498D1A3847500009910F /* CatelogTableViewCell.m */; };
 		57D249911A3847BE0009910F /* UIImage+RTTint.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D249901A3847BE0009910F /* UIImage+RTTint.m */; };
 		57D249941A3851970009910F /* NickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D249931A3851970009910F /* NickView.m */; };
+		57D6046F1A396C7B00168910 /* PXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D6046C1A396C7B00168910 /* PXAlertView.m */; };
+		57D604701A396C7B00168910 /* PXAlertView+Customization.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D6046E1A396C7B00168910 /* PXAlertView+Customization.m */; };
+		57D604731A396D3C00168910 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D604721A396D3C00168910 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		57D604781A39716A00168910 /* RYBubbleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D604771A39716A00168910 /* RYBubbleButton.m */; };
+		57D6047B1A39785800168910 /* IndexBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D6047A1A39785800168910 /* IndexBlurView.m */; };
+		57D604801A398C9300168910 /* RYUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D6047F1A398C9300168910 /* RYUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -604,6 +610,21 @@
 		57D249901A3847BE0009910F /* UIImage+RTTint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RTTint.m"; path = "Class/Catelgory/UIImage+RTTint.m"; sourceTree = "<group>"; };
 		57D249921A3851970009910F /* NickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NickView.h; path = Class/View/IndexView/NickView.h; sourceTree = "<group>"; };
 		57D249931A3851970009910F /* NickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NickView.m; path = Class/View/IndexView/NickView.m; sourceTree = "<group>"; };
+		57D6046B1A396C7B00168910 /* PXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXAlertView.h; path = Class/Utils/PXAlertView.h; sourceTree = "<group>"; };
+		57D6046C1A396C7B00168910 /* PXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXAlertView.m; path = Class/Utils/PXAlertView.m; sourceTree = "<group>"; };
+		57D6046D1A396C7B00168910 /* PXAlertView+Customization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PXAlertView+Customization.h"; path = "Class/Utils/PXAlertView+Customization.h"; sourceTree = "<group>"; };
+		57D6046E1A396C7B00168910 /* PXAlertView+Customization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PXAlertView+Customization.m"; path = "Class/Utils/PXAlertView+Customization.m"; sourceTree = "<group>"; };
+		57D604711A396D3C00168910 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = Class/Utils/SVProgressHUD.h; sourceTree = "<group>"; };
+		57D604721A396D3C00168910 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = Class/Utils/SVProgressHUD.m; sourceTree = "<group>"; };
+		57D604751A396E3100168910 /* Catelog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Catelog.h; path = Class/Model/Catelog/Catelog.h; sourceTree = "<group>"; };
+		57D604761A39716A00168910 /* RYBubbleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RYBubbleButton.h; path = Class/View/IndexView/RYBubbleButton.h; sourceTree = "<group>"; };
+		57D604771A39716A00168910 /* RYBubbleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RYBubbleButton.m; path = Class/View/IndexView/RYBubbleButton.m; sourceTree = "<group>"; };
+		57D604791A39785800168910 /* IndexBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexBlurView.h; path = Class/View/IndexView/IndexBlurView.h; sourceTree = "<group>"; };
+		57D6047A1A39785800168910 /* IndexBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexBlurView.m; path = Class/View/IndexView/IndexBlurView.m; sourceTree = "<group>"; };
+		57D6047D1A39889300168910 /* PersonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonInfo.h; path = Class/Model/PersonInfo/PersonInfo.h; sourceTree = "<group>"; };
+		57D6047E1A398C9300168910 /* RYUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RYUtils.h; path = Class/Utils/RYUtils.h; sourceTree = "<group>"; };
+		57D6047F1A398C9300168910 /* RYUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RYUtils.m; path = Class/Utils/RYUtils.m; sourceTree = "<group>"; };
+		57D604841A39945300168910 /* UserFace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserFace.h; path = Class/Model/UserFace/UserFace.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1436,6 +1457,14 @@
 			children = (
 				57D247A61A37EDF40009910F /* UMengHandler.h */,
 				57D247A71A37EDF40009910F /* UMengHandler.m */,
+				57D604711A396D3C00168910 /* SVProgressHUD.h */,
+				57D604721A396D3C00168910 /* SVProgressHUD.m */,
+				57D6046B1A396C7B00168910 /* PXAlertView.h */,
+				57D6046C1A396C7B00168910 /* PXAlertView.m */,
+				57D6046D1A396C7B00168910 /* PXAlertView+Customization.h */,
+				57D6046E1A396C7B00168910 /* PXAlertView+Customization.m */,
+				57D6047E1A398C9300168910 /* RYUtils.h */,
+				57D6047F1A398C9300168910 /* RYUtils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1493,6 +1522,10 @@
 				57D249801A3846640009910F /* RYTableView.m */,
 				57D249921A3851970009910F /* NickView.h */,
 				57D249931A3851970009910F /* NickView.m */,
+				57D604761A39716A00168910 /* RYBubbleButton.h */,
+				57D604771A39716A00168910 /* RYBubbleButton.m */,
+				57D604791A39785800168910 /* IndexBlurView.h */,
+				57D6047A1A39785800168910 /* IndexBlurView.m */,
 			);
 			name = IndexView;
 			sourceTree = "<group>";
@@ -1520,6 +1553,7 @@
 		57D248131A38342E0009910F /* Catelog */ = {
 			isa = PBXGroup;
 			children = (
+				57D604751A396E3100168910 /* Catelog.h */,
 				57D2496D1A3839840009910F /* CatelogModel.h */,
 				57D2496E1A3839840009910F /* CatelogModel.m */,
 				57D2496F1A3839840009910F /* CatelogOperation.h */,
@@ -1599,6 +1633,7 @@
 		57D2481A1A3834750009910F /* PersonInfo */ = {
 			isa = PBXGroup;
 			children = (
+				57D6047D1A39889300168910 /* PersonInfo.h */,
 				57D248571A38377A0009910F /* PersonInfoModel.h */,
 				57D248581A38377A0009910F /* PersonInfoModel.m */,
 				57D248591A38377A0009910F /* PersonInfoOperation.h */,
@@ -1632,6 +1667,7 @@
 		57D2481D1A3834990009910F /* UserFace */ = {
 			isa = PBXGroup;
 			children = (
+				57D604841A39945300168910 /* UserFace.h */,
 				57D248451A3836980009910F /* UserFaceModel.h */,
 				57D248461A3836980009910F /* UserFaceModel.m */,
 				57D248471A3836980009910F /* UserFaceOperation.h */,
@@ -1869,8 +1905,10 @@
 				57D247341A37E5340009910F /* MKAnnotationView+WebCache.m in Sources */,
 				57D246F91A37E5340009910F /* QBaseViewController+Photo.m in Sources */,
 				57D247311A37E5340009910F /* JSONValueTransformer.m in Sources */,
+				57D604781A39716A00168910 /* RYBubbleButton.m in Sources */,
 				57D2486B1A38390A0009910F /* UserFriendOperation.m in Sources */,
 				57D247AB1A37EEA90009910F /* UIColor+hexColor.m in Sources */,
+				57D604801A398C9300168910 /* RYUtils.m in Sources */,
 				57D248631A3837890009910F /* JXAddressBook.m in Sources */,
 				57D247421A37E5340009910F /* UIImageView+WebCache.m in Sources */,
 				57D247F71A381C240009910F /* MASLayoutConstraint.m in Sources */,
@@ -1915,6 +1953,8 @@
 				57D246FC1A37E5340009910F /* QBaseTableView.m in Sources */,
 				57D2472C1A37E5340009910F /* NSArray+JSONModel.m in Sources */,
 				57D2473F1A37E5340009910F /* UIImage+MultiFormat.m in Sources */,
+				57D6046F1A396C7B00168910 /* PXAlertView.m in Sources */,
+				57D604701A396C7B00168910 /* PXAlertView+Customization.m in Sources */,
 				57D247061A37E5340009910F /* QBaseNetOperation.m in Sources */,
 				57D248051A38290D0009910F /* RYPageControl.m in Sources */,
 				57D249721A3839840009910F /* CatelogOperation.m in Sources */,
@@ -1953,6 +1993,8 @@
 				57D2496B1A3839780009910F /* TempletModel.m in Sources */,
 				57D248061A38290D0009910F /* RYScrollView.m in Sources */,
 				57D2471A1A37E5340009910F /* FICImageTable.m in Sources */,
+				57D6047B1A39785800168910 /* IndexBlurView.m in Sources */,
+				57D604731A396D3C00168910 /* SVProgressHUD.m in Sources */,
 				57D2497B1A3841160009910F /* TitleView.m in Sources */,
 				57D248561A3837240009910F /* LoginOperation.m in Sources */,
 				57D247401A37E5340009910F /* UIImage+WebP.m in Sources */,

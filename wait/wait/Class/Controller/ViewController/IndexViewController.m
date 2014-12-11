@@ -11,10 +11,11 @@
 @interface IndexViewController ()
 @property (nonatomic, strong)NSMutableArray *models;
 @property (nonatomic, strong)NSArray *tempModels;
-@property (nonatomic, strong)RYTableView *motionTable;
-@property (nonatomic, strong)RYTableView *scheduleTable;
 @property (nonatomic, strong)RYSegmentedControl *segmentedControl;
-@property (nonatomic, strong)UILabel *nickName;
+@property (nonatomic, strong)NickView *nickView;
+@property (nonatomic, strong)RYBubbleButton *downMenuButton;
+@property (nonatomic, strong)IndexBlurView *blurView;
+@property (nonatomic, strong)IndexBlurView *smallBlurView;
 @end
 
 @implementation IndexViewController
@@ -32,8 +33,6 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.motionTable reloadData];
-    [self.scheduleTable reloadData];
     if ([[QBaseUserInfo sharedQBaseUserInfo]userInfo] != nil) {
         //  个人信息请求
         [self startPersonInfoOperation];
@@ -55,33 +54,19 @@
 }
 - (void)createSegment{
     self.segmentedControl = [[RYSegmentedControl alloc] initWithSectionImages:@[[UIImage imageNamed:@"xinqing.png"],[UIImage imageNamed:@"tixing.png"]] sectionSelectedImages:@[[UIImage imageNamed:@"dianjixinqing.png"],[UIImage imageNamed:@"dianjitixing.png"]] titlesForSections:@[@" ", @" "]];
-    self.segmentedControl.frame =CGRectMake(0, SCREENHEIGHT - 65, SCREENWIDTH, 65);
+    [self.view addSubview:self.segmentedControl];
     self.segmentedControl.scrollView.delegate =self;
     self.segmentedControl.firstTableView.delegate = self;
     self.segmentedControl.firstTableView.dataSource = self;
     self.segmentedControl.secondTableView.delegate = self;
     self.segmentedControl.secondTableView.dataSource = self;
-    [self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+    [self.segmentedControl.segmented addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
 }
 - (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
     if (segmentedControl.selectedSegmentIndex == 0) {
-        [self.models removeAllObjects];
-        for (CatelogModel * model in self.tempModels) {
-            if ([model.flag isEqualToString:@"1"]) {
-                //  获得情感类模板对象数组
-                [self.models addObject:model];
-            }
-        }
-        [self.motionTable reloadData];
+        [self reloadTableView:@"1"];
     }else{
-        [self.models removeAllObjects];
-        for (CatelogModel * model in self.tempModels) {
-            if ([model.flag isEqualToString:@"2"]) {
-                //  获得节日类模板对象数组
-                [self.models addObject:model];
-            }
-        }
-        [self.scheduleTable reloadData];
+        [self reloadTableView:@"2"];
     }
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -91,11 +76,11 @@
         
         CGFloat alpha = offset.x/320;
         if (offset.x <= SCREENWIDTH) {
-            self.motionTable.alpha = 1 - alpha;
-            self.scheduleTable.alpha = alpha;
+            self.segmentedControl.firstTableView.alpha = 1 - alpha;
+            self.segmentedControl.secondTableView.alpha = alpha;
         }else{
-            self.motionTable.alpha = alpha;
-            self.scheduleTable.alpha = alpha;
+            self.segmentedControl.firstTableView.alpha = alpha;
+            self.segmentedControl.secondTableView.alpha = alpha;
         }
         if (offset.x >= SCREENWIDTH) {
             [self reloadTableView:@"2"];
@@ -114,28 +99,173 @@
         }
     }
     if ([flag isEqualToString:@"1"]) {
-        [self.motionTable reloadData];
+        [self.segmentedControl.firstTableView reloadData];
     }else{
-        [self.scheduleTable reloadData];
+        [self.segmentedControl.secondTableView reloadData];
     }
 }
 - (void)createNick{
-    UIImageView *nickImage = [[UIImageView alloc]initWithFrame:CGRectMake(88, self.photoImage.center.y - 7, 16, 15)];
-    nickImage.image = [UIImage imageNamed:@"star.png"];
-    [self.view insertSubview:nickImage belowSubview:self.photoImage];
-    self.nickName = [[UILabel alloc]initWithFrame:CGRectMake(110, self.photoImage.center.y - 8, 150, 20)];
-    self.nickName.textAlignment = NSTextAlignmentLeft;
-    self.nickName.textColor = [UIColor hexColor:@"666666"];
-    self.nickName.font = FONT(15);
-    [self.view insertSubview:self.nickName belowSubview:self.photoImage];
+    self.nickView = [[NickView alloc]init];
+    [self.view insertSubview:self.nickView belowSubview:self.photoImage];
+    [self.nickView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.photoImage.mas_centerY);
+        make.left.mas_equalTo(self.photoImage.mas_right).offset(5);
+        make.width.mas_equalTo(@180);
+        make.height.mas_equalTo(@20);
+    }];
 }
 - (void)createBubbleMenu{
-    
+    self.downMenuButton = [[RYBubbleButton alloc] initWithFrame:CGRectMake(20.f,87.f,57.0f,57.0f)expansionDirection:DirectionRight];
+    self.downMenuButton.delegate = self;
+    for (UIButton *button in self.downMenuButton.buttons) {
+        [button addTarget:self action:@selector(tapButton:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    [self.view addSubview:self.downMenuButton];
+}
+- (void)tapButton:(UIButton *)sender{
+    [self.blurView removeFromSuperview];
+    [self.smallBlurView removeFromSuperview];
+//    if ([[QBaseUserInfo sharedQBaseUserInfo]userInfo] == nil) {
+//        [self pushToLogInView];
+//    }else
+    {
+        switch (sender.tag) {
+            case 0:{
+                UIImagePickerController* imagePicker = [[UIImagePickerController alloc]init];
+                imagePicker.delegate = self;
+                [imagePicker setSourceType:1];
+                [MobClick event:@"camera"];
+                [self presentViewController:imagePicker animated:YES completion:nil];
+            }
+                break;
+            case 1:{
+                UIImagePickerController* imagePicker = [[UIImagePickerController alloc]init];
+                imagePicker.delegate = self;
+                [imagePicker setSourceType:0];
+                [MobClick event:@"photoAlbum"];
+                [self presentViewController:imagePicker animated:YES completion:nil];
+            }
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            default:
+                break;
+        }
+    }
+}
+- (void)tapbubbleMenuWith:(DWBubbleMenuButton *)button andState:(BOOL)dismiss{
+    if (!dismiss) {
+        self.blurView = [[IndexBlurView alloc]initWithFrame:self.view.frame];
+        self.smallBlurView = [[IndexBlurView alloc]initWithFrame:CGRectMake(0, -20, SCREENWIDTH, 64)];
+        [self.navigationController.navigationBar addSubview:self.smallBlurView];
+        [self.view insertSubview:self.blurView belowSubview:self.photoImage];
+    }else{
+        [self.blurView removeFromSuperview];
+        [self.smallBlurView removeFromSuperview];
+    }
 }
 - (void)startCatelogOperation{
-    
+    [SVProgressHUD showInView:self.view];
+    CatelogOperation *operation = [CatelogOperation operationWithDelegate:self];
+    if (operation.url) {
+        [operation start];
+    }else{
+        [PXAlertView showAlertWithTitle:@"网络错误"];
+    }
 }
 - (void)startPersonInfoOperation{
+    PersonInfoOperation *operation = [PersonInfoOperation operationWithDelegate:self];
+    NSDictionary *dic =[[QBaseUserInfo sharedQBaseUserInfo]userInfo];
+    NSString *uid = [dic objectForKey:@"UID"];
+    operation.params = @{
+                         @"uid":uid
+                         };
+    [operation start];
+}
+- (void)startUserFaceOperationWith:(NSData *)imageData{
+    UserFaceOperation *operation = [UserFaceOperation operationWithDelegate:self];
+    NSDictionary *dic =[[QBaseUserInfo sharedQBaseUserInfo]userInfo];
+    NSString *uid = [dic objectForKey:@"UID"];
+    operation.params = @{
+                         @"uid":uid
+                         };
+    [operation setBodyBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:imageData name:@"upfile" fileName:@"upfile.jpg" mimeType:@"image/jpeg"];
+    }];
+    [operation start];
+}
+#pragma mark -
+#pragma mark 网络请求成功回调
+- (void)netOperationDidFinish:(QBaseNetOperation *)operation{
+    [SVProgressHUD dismiss];
+    if ([operation isKindOfClass:[CatelogOperation class]]){
+        //  获取临时分类对象
+        self.tempModels = operation.dataArray;
+        [self reloadTableView:@"1"];
+    }else if ([operation isKindOfClass:[PersonInfoOperation class]]){
+        id result = [operation.responseData objectForKey:@"userInfo"];
+        
+        if ([result isKindOfClass:[NSNumber class]]) {
+            return;
+        }
+        
+        self.nickView.nickName.text = [result objectForKey:@"nickName"];
+        [[NSUserDefaults standardUserDefaults]setValue:result forKey:@"PersonInfo"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        
+        NSString *photoUrl = [result objectForKey:@"userPic"];
+        
+        NSData *imageData = [[NSUserDefaults standardUserDefaults]valueForKey:@"imageData"];
+        
+        if(imageData){
+            self.photoImage.image = [UIImage imageWithData:imageData];
+        }else{
+            [self.photoImage sd_setImageWithURL:[NSURL URLWithString:photoUrl] placeholderImage:[UIImage imageNamed:@"touxiang.fw.png"]];
+        }
+    }
+}
+#pragma mark -
+#pragma mark 网络请求失败回调
+- (void)netOperationDidFailed:(QBaseNetOperation *)operation{
+    NSLog(@"%@,%@",operation.error,operation.url);
+    [PXAlertView showAlertWithTitle:@"网络错误"];
+}
+#pragma mark -
+#pragma mark TabelViewDelegate,TableViewDataSource
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 72;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.models.count;
+}
+static NSString *identifier = @"cell";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CatelogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[CatelogTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.backgroundColor = [UIColor clearColor];
+    cell.model = self.models[indexPath.row];
+    cell.isClick = NO;
+    UIView *bgColorView = [[UIView alloc] initWithFrame:cell.frame];
+    bgColorView.backgroundColor = [UIColor hexColor:cell.model.Codeblock];
+    [cell setSelectedBackgroundView:bgColorView];
+    
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CatelogTableViewCell *cell = (CatelogTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    CatelogModel *model = self.models[indexPath.row];
+    cell.isClick = YES;
+    //[self uMengCountWith:tableView.tag and:indexPath.row];
+    //[self performSegueWithIdentifier:@"IndexToEdit" sender:model];
+}
+- (void)pushToLogInView{
     
 }
 @end

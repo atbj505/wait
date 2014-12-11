@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface NickView : UIView
-
+@property (nonatomic, strong)UILabel *nickName;
 @end

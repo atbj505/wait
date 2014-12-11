@@ -7,8 +7,13 @@
 //
 
 #import "RYViewController.h"
-#import "DWBubbleMenuButton.h"
+#import "RYBubbleButton.h"
 #import "RYSegmentedControl.h"
+#import "NickView.h"
+#import "IndexBlurView.h"
+#import "Catelog.h"
+#import "PersonInfo.h"
+#import "UserFace.h"
 
 @interface IndexViewController : RYViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,DWBubbleMenuViewDelegate,UIScrollViewDelegate>
 
