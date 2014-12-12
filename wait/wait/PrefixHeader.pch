@@ -20,6 +20,7 @@
 #import "Masonry.h"
 #import "TitleView.h"
 #import "PXAlertView.h"
+#import "AlertContentView.h"
 #import "SVProgressHUD.h"
 #import "RYUtils.h"
 #import "MobClick.h"

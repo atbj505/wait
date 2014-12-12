@@ -94,4 +94,14 @@ typedef void(^PXAlertViewCompletionBlock)(BOOL cancelled, NSInteger buttonIndex)
  */
 - (void)setTapToDismissEnabled:(BOOL)enabled;
 
+- (id)initWithTitle:(NSString *)title
+            message:(NSString *)message
+        cancelTitle:(NSString *)cancelTitle
+         otherTitle:(NSString *)otherTitle
+ buttonsShouldStack:(BOOL)shouldstack
+        contentView:(UIView *)contentView
+         completion:(PXAlertViewCompletionBlock)completion;
+
+- (void)show;
+@property (nonatomic, strong)UITextField *textField;
 @end

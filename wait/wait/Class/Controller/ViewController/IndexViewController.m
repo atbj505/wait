@@ -33,6 +33,8 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.segmentedControl.firstTableView reloadData];
+    [self.segmentedControl.secondTableView reloadData];
     if ([[QBaseUserInfo sharedQBaseUserInfo]userInfo] != nil) {
         //  个人信息请求
         [self startPersonInfoOperation];
@@ -90,6 +92,14 @@
         }
     }
 }
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (scrollView.tag == 1) {
+        CGFloat pageWidth = scrollView.frame.size.width;
+        NSInteger page = scrollView.contentOffset.x / pageWidth;
+        
+        [self.segmentedControl.segmented setSelectedSegmentIndex:page animated:YES];
+    }
+}
 - (void)reloadTableView:(NSString*)flag{
     [self.models removeAllObjects];
     for (CatelogModel * model in self.tempModels) {
@@ -125,9 +135,9 @@
 - (void)tapButton:(UIButton *)sender{
     [self.blurView removeFromSuperview];
     [self.smallBlurView removeFromSuperview];
-//    if ([[QBaseUserInfo sharedQBaseUserInfo]userInfo] == nil) {
-//        [self pushToLogInView];
-//    }else
+    if ([[QBaseUserInfo sharedQBaseUserInfo]userInfo] == nil) {
+        [self pushToLogInView];
+    }else
     {
         switch (sender.tag) {
             case 0:{
@@ -146,11 +156,15 @@
                 [self presentViewController:imagePicker animated:YES completion:nil];
             }
                 break;
-            case 2:
-                
+            case 2:{
+                PersonEditViewController *personEditVC = [[PersonEditViewController alloc]initWithNibName:nil bundle:nil];
+                [self.navigationController pushViewController:personEditVC animated:YES];
+            }
                 break;
-            case 3:
-                
+            case 3:{
+                PersonCenterViewController *personCenterVC = [[PersonCenterViewController alloc]initWithNibName:nil bundle:nil];
+                [self.navigationController pushViewController:personCenterVC animated:YES];
+            }
                 break;
             default:
                 break;
@@ -263,9 +277,12 @@ static NSString *identifier = @"cell";
     CatelogModel *model = self.models[indexPath.row];
     cell.isClick = YES;
     //[self uMengCountWith:tableView.tag and:indexPath.row];
-    //[self performSegueWithIdentifier:@"IndexToEdit" sender:model];
+    EditViewController *editVC = [[EditViewController alloc]initWithNibName:nil bundle:nil];
+    editVC.catelogModel = model;
+    [self.navigationController pushViewController:editVC animated:YES];
 }
 - (void)pushToLogInView{
-    
+    LogInViewController *logVC = [[LogInViewController alloc]initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:logVC animated:YES];
 }
 @end

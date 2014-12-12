@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57CCAC2D1A3A85F000ADCDE1 /* PersonEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CCAC2C1A3A85F000ADCDE1 /* PersonEditViewController.m */; };
+		57CCAC311A3A876B00ADCDE1 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CCAC301A3A876B00ADCDE1 /* LogInViewController.m */; };
+		57CCAC341A3A878B00ADCDE1 /* ValidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CCAC331A3A878B00ADCDE1 /* ValidateViewController.m */; };
+		57CCAC381A3A8B7D00ADCDE1 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CCAC371A3A8B7D00ADCDE1 /* LoginView.m */; };
+		57CCAC3D1A3AC2C400ADCDE1 /* ValidateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CCAC3C1A3AC2C400ADCDE1 /* ValidateView.m */; };
+		57CCAC401A3AC63F00ADCDE1 /* LogBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CCAC3F1A3AC63F00ADCDE1 /* LogBaseView.m */; };
+		57CCAC4B1A3ADED300ADCDE1 /* AlertContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CCAC4A1A3ADED300ADCDE1 /* AlertContentView.m */; };
+		57D058A51A3A7CE600918122 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D058A41A3A7CE600918122 /* EditViewController.m */; };
+		57D058A91A3A809700918122 /* PersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D058A81A3A809700918122 /* PersonCenterViewController.m */; };
 		57D245B11A37DCA10009910F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D245B01A37DCA10009910F /* main.m */; };
 		57D245B41A37DCA10009910F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D245B31A37DCA10009910F /* AppDelegate.m */; };
 		57D245BC1A37DCA10009910F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D245BB1A37DCA10009910F /* Images.xcassets */; };
@@ -227,6 +236,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57CCAC2B1A3A85F000ADCDE1 /* PersonEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonEditViewController.h; path = Class/Controller/ViewController/PersonCenter/PersonEditViewController.h; sourceTree = "<group>"; };
+		57CCAC2C1A3A85F000ADCDE1 /* PersonEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonEditViewController.m; path = Class/Controller/ViewController/PersonCenter/PersonEditViewController.m; sourceTree = "<group>"; };
+		57CCAC2F1A3A876B00ADCDE1 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogInViewController.h; path = Class/Controller/ViewController/Login/LogInViewController.h; sourceTree = "<group>"; };
+		57CCAC301A3A876B00ADCDE1 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogInViewController.m; path = Class/Controller/ViewController/Login/LogInViewController.m; sourceTree = "<group>"; };
+		57CCAC321A3A878B00ADCDE1 /* ValidateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValidateViewController.h; path = Class/Controller/ViewController/Login/ValidateViewController.h; sourceTree = "<group>"; };
+		57CCAC331A3A878B00ADCDE1 /* ValidateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ValidateViewController.m; path = Class/Controller/ViewController/Login/ValidateViewController.m; sourceTree = "<group>"; };
+		57CCAC361A3A8B7D00ADCDE1 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginView.h; path = Class/View/LoginView/LoginView.h; sourceTree = "<group>"; };
+		57CCAC371A3A8B7D00ADCDE1 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginView.m; path = Class/View/LoginView/LoginView.m; sourceTree = "<group>"; };
+		57CCAC391A3ABC1900ADCDE1 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Login.h; path = Class/Model/Login/Login.h; sourceTree = "<group>"; };
+		57CCAC3B1A3AC2C400ADCDE1 /* ValidateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValidateView.h; path = Class/View/ValidateView/ValidateView.h; sourceTree = "<group>"; };
+		57CCAC3C1A3AC2C400ADCDE1 /* ValidateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ValidateView.m; path = Class/View/ValidateView/ValidateView.m; sourceTree = "<group>"; };
+		57CCAC3E1A3AC63F00ADCDE1 /* LogBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogBaseView.h; path = Class/View/LoginView/LogBaseView.h; sourceTree = "<group>"; };
+		57CCAC3F1A3AC63F00ADCDE1 /* LogBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogBaseView.m; path = Class/View/LoginView/LogBaseView.m; sourceTree = "<group>"; };
+		57CCAC411A3AC8F000ADCDE1 /* MessageValidate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessageValidate.h; path = Class/Model/MessageValiDate/MessageValidate.h; sourceTree = "<group>"; };
+		57CCAC421A3ACC5900ADCDE1 /* UpVali.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UpVali.h; path = Class/Model/UpValiDate/UpVali.h; sourceTree = "<group>"; };
+		57CCAC491A3ADED300ADCDE1 /* AlertContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertContentView.h; path = Class/Utils/AlertContentView.h; sourceTree = "<group>"; };
+		57CCAC4A1A3ADED300ADCDE1 /* AlertContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertContentView.m; path = Class/Utils/AlertContentView.m; sourceTree = "<group>"; };
+		57D058A31A3A7CE600918122 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditViewController.h; path = "Class/Controller/ViewController/Edit&Send/EditViewController.h"; sourceTree = "<group>"; };
+		57D058A41A3A7CE600918122 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditViewController.m; path = "Class/Controller/ViewController/Edit&Send/EditViewController.m"; sourceTree = "<group>"; };
+		57D058A71A3A809700918122 /* PersonCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonCenterViewController.h; path = Class/Controller/ViewController/PersonCenter/PersonCenterViewController.h; sourceTree = "<group>"; };
+		57D058A81A3A809700918122 /* PersonCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonCenterViewController.m; path = Class/Controller/ViewController/PersonCenter/PersonCenterViewController.m; sourceTree = "<group>"; };
 		57D245AB1A37DCA10009910F /* wait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wait.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D245AF1A37DCA10009910F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D245B01A37DCA10009910F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -654,6 +684,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57CCAC2E1A3A86F000ADCDE1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				57CCAC2F1A3A876B00ADCDE1 /* LogInViewController.h */,
+				57CCAC301A3A876B00ADCDE1 /* LogInViewController.m */,
+				57CCAC321A3A878B00ADCDE1 /* ValidateViewController.h */,
+				57CCAC331A3A878B00ADCDE1 /* ValidateViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		57CCAC351A3A8B6000ADCDE1 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				57CCAC361A3A8B7D00ADCDE1 /* LoginView.h */,
+				57CCAC371A3A8B7D00ADCDE1 /* LoginView.m */,
+				57CCAC3E1A3AC63F00ADCDE1 /* LogBaseView.h */,
+				57CCAC3F1A3AC63F00ADCDE1 /* LogBaseView.m */,
+			);
+			name = LoginView;
+			sourceTree = "<group>";
+		};
+		57CCAC3A1A3AC2A200ADCDE1 /* ValidateView */ = {
+			isa = PBXGroup;
+			children = (
+				57CCAC3B1A3AC2C400ADCDE1 /* ValidateView.h */,
+				57CCAC3C1A3AC2C400ADCDE1 /* ValidateView.m */,
+			);
+			name = ValidateView;
+			sourceTree = "<group>";
+		};
+		57D058A21A3A7C9900918122 /* Edit&Send */ = {
+			isa = PBXGroup;
+			children = (
+				57D058A31A3A7CE600918122 /* EditViewController.h */,
+				57D058A41A3A7CE600918122 /* EditViewController.m */,
+			);
+			name = "Edit&Send";
+			sourceTree = "<group>";
+		};
+		57D058A61A3A805500918122 /* PersonCenter */ = {
+			isa = PBXGroup;
+			children = (
+				57D058A71A3A809700918122 /* PersonCenterViewController.h */,
+				57D058A81A3A809700918122 /* PersonCenterViewController.m */,
+				57CCAC2B1A3A85F000ADCDE1 /* PersonEditViewController.h */,
+				57CCAC2C1A3A85F000ADCDE1 /* PersonEditViewController.m */,
+			);
+			name = PersonCenter;
+			sourceTree = "<group>";
+		};
 		57D245A21A37DCA00009910F = {
 			isa = PBXGroup;
 			children = (
@@ -792,6 +873,8 @@
 			children = (
 				57D249791A3841160009910F /* TitleView.h */,
 				57D2497A1A3841160009910F /* TitleView.m */,
+				57CCAC3A1A3AC2A200ADCDE1 /* ValidateView */,
+				57CCAC351A3A8B6000ADCDE1 /* LoginView */,
 				57D248081A382C6F0009910F /* IndexView */,
 				57D248001A3828D40009910F /* IntroView */,
 			);
@@ -1448,6 +1531,9 @@
 				57D247B61A3818B80009910F /* IntroViewController.m */,
 				57D247AF1A3817C70009910F /* IndexViewController.h */,
 				57D247B01A3817C70009910F /* IndexViewController.m */,
+				57CCAC2E1A3A86F000ADCDE1 /* Login */,
+				57D058A21A3A7C9900918122 /* Edit&Send */,
+				57D058A61A3A805500918122 /* PersonCenter */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1465,6 +1551,8 @@
 				57D6046E1A396C7B00168910 /* PXAlertView+Customization.m */,
 				57D6047E1A398C9300168910 /* RYUtils.h */,
 				57D6047F1A398C9300168910 /* RYUtils.m */,
+				57CCAC491A3ADED300ADCDE1 /* AlertContentView.h */,
+				57CCAC4A1A3ADED300ADCDE1 /* AlertContentView.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1645,6 +1733,7 @@
 		57D2481B1A38347E0009910F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				57CCAC391A3ABC1900ADCDE1 /* Login.h */,
 				57D248511A3837240009910F /* LoginModel.h */,
 				57D248521A3837240009910F /* LoginModel.m */,
 				57D248531A3837240009910F /* LoginOperation.h */,
@@ -1656,6 +1745,7 @@
 		57D2481C1A3834850009910F /* UpValiDate */ = {
 			isa = PBXGroup;
 			children = (
+				57CCAC421A3ACC5900ADCDE1 /* UpVali.h */,
 				57D2484B1A3836AA0009910F /* UpValiModel.h */,
 				57D2484C1A3836AA0009910F /* UpValiModel.m */,
 				57D2484D1A3836AA0009910F /* UpValiOperation.h */,
@@ -1701,6 +1791,7 @@
 		57D248201A3834D70009910F /* MessageValiDate */ = {
 			isa = PBXGroup;
 			children = (
+				57CCAC411A3AC8F000ADCDE1 /* MessageValidate.h */,
 				57D248331A38361C0009910F /* MessageValidateModel.h */,
 				57D248341A38361C0009910F /* MessageValidateModel.m */,
 				57D248351A38361C0009910F /* MessageValidateOperation.h */,
@@ -1871,7 +1962,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D246FF1A37E5340009910F /* QBasePush.m in Sources */,
+				57CCAC401A3AC63F00ADCDE1 /* LogBaseView.m in Sources */,
 				57D247441A37E5340009910F /* TMCache.m in Sources */,
+				57CCAC381A3A8B7D00ADCDE1 /* LoginView.m in Sources */,
 				57D247B71A3818B80009910F /* IntroViewController.m in Sources */,
 				57D2473C1A37E5340009910F /* SDWebImagePrefetcher.m in Sources */,
 				57D247291A37E5340009910F /* JSONModelArray.m in Sources */,
@@ -1913,6 +2006,7 @@
 				57D247421A37E5340009910F /* UIImageView+WebCache.m in Sources */,
 				57D247F71A381C240009910F /* MASLayoutConstraint.m in Sources */,
 				57D2470B1A37E5340009910F /* UIImageView+LoadImage.m in Sources */,
+				57CCAC3D1A3AC2C400ADCDE1 /* ValidateView.m in Sources */,
 				57D2472F1A37E5340009910F /* JSONModel+networking.m in Sources */,
 				57D2485B1A38377A0009910F /* PersonInfoModel.m in Sources */,
 				57D2473B1A37E5340009910F /* SDWebImageManager.m in Sources */,
@@ -1937,9 +2031,12 @@
 				57D2471E1A37E5340009910F /* FCCurrentLocationGeocoder.m in Sources */,
 				57D247071A37E5340009910F /* NSObject+QBaseNetworkObserver.m in Sources */,
 				57D247271A37E5340009910F /* JSONKit.m in Sources */,
+				57D058A91A3A809700918122 /* PersonCenterViewController.m in Sources */,
 				57D2470D1A37E5340009910F /* QBaseUserInfo.m in Sources */,
+				57CCAC2D1A3A85F000ADCDE1 /* PersonEditViewController.m in Sources */,
 				57D2472D1A37E5340009910F /* JSONAPI.m in Sources */,
 				57D247F41A381C240009910F /* MASCompositeConstraint.m in Sources */,
+				57CCAC4B1A3ADED300ADCDE1 /* AlertContentView.m in Sources */,
 				57D249911A3847BE0009910F /* UIImage+RTTint.m in Sources */,
 				57D2482B1A38356D0009910F /* UpstatusOperation.m in Sources */,
 				57D248551A3837240009910F /* LoginModel.m in Sources */,
@@ -1970,6 +2067,7 @@
 				57D2473D1A37E5340009910F /* UIButton+WebCache.m in Sources */,
 				57D247F81A381C240009910F /* MASViewAttribute.m in Sources */,
 				57D2472E1A37E5340009910F /* JSONHTTPClient.m in Sources */,
+				57D058A51A3A7CE600918122 /* EditViewController.m in Sources */,
 				57D246101A37E4990009910F /* MosaicData.m in Sources */,
 				57D2495F1A38395C0009910F /* MessagesModel.m in Sources */,
 				57D2472A1A37E5340009910F /* JSONModelClassProperty.m in Sources */,
@@ -1991,6 +2089,7 @@
 				57D2498E1A3847500009910F /* CatelogTableViewCell.m in Sources */,
 				57D246011A37E4550009910F /* DWBubbleMenuButton.m in Sources */,
 				57D2496B1A3839780009910F /* TempletModel.m in Sources */,
+				57CCAC341A3A878B00ADCDE1 /* ValidateViewController.m in Sources */,
 				57D248061A38290D0009910F /* RYScrollView.m in Sources */,
 				57D2471A1A37E5340009910F /* FICImageTable.m in Sources */,
 				57D6047B1A39785800168910 /* IndexBlurView.m in Sources */,
@@ -2016,6 +2115,7 @@
 				57D249811A3846640009910F /* RYTableView.m in Sources */,
 				57D2472B1A37E5340009910F /* JSONModelError.m in Sources */,
 				57D247301A37E5340009910F /* JSONKeyMapper.m in Sources */,
+				57CCAC311A3A876B00ADCDE1 /* LogInViewController.m in Sources */,
 				57D247201A37E5340009910F /* FLAnimatedImage.m in Sources */,
 				57D247F61A381C240009910F /* MASConstraintMaker.m in Sources */,
 				57D2470E1A37E5340009910F /* AFHTTPRequestOperation.m in Sources */,

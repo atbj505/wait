@@ -14,6 +14,10 @@
 #import "Catelog.h"
 #import "PersonInfo.h"
 #import "UserFace.h"
+#import "EditViewController.h"
+#import "PersonCenterViewController.h"
+#import "PersonEditViewController.h"
+#import "LogInViewController.h"
 
 @interface IndexViewController : RYViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,DWBubbleMenuViewDelegate,UIScrollViewDelegate>
 
