@@ -15,8 +15,7 @@
 @implementation LogInViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"验证页";
-    self.navigationItem.titleView = [TitleView TitleViewWithTitle:@"验证页"];
+    [self naviTitle:@"验证页"];
     [self backImage:@"yanzhengye.png"];
     [self updateUI];
 }

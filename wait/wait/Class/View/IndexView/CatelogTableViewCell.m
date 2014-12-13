@@ -18,7 +18,7 @@
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.photoImage = [[UIImageView alloc]initWithFrame:CGRectMake(18, 22, 30, 30)];
+        self.photoImage = [[RYImageView alloc]initWithFrame:CGRectMake(18, 22, 30, 30)];
         self.catelogIntro = [[UILabel alloc]initWithFrame:CGRectMake(81, 27, 80, 20)];
         self.catelogIntro.textAlignment = NSTextAlignmentLeft;
         [self addSubview:self.photoImage];
@@ -38,7 +38,7 @@
         self.photoImage.image = image;
     }else{
         self.catelogIntro.textColor = [UIColor hexColor:self.model.Codeblock];
-        [self.photoImage sd_setImageWithURL:[NSURL URLWithString:self.model.logoUrl]];
+        [self.photoImage withImageName:self.model.logoUrl];
     }
 }
 

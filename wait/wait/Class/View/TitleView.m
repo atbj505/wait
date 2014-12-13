@@ -24,7 +24,7 @@
         [customLab setTextColor:[UIColor whiteColor]];
         [customLab setText:title];
         customLab.textAlignment = NSTextAlignmentCenter;
-        customLab.font = [UIFont fontWithName:@"Heiti SC" size:20];
+        customLab.font = FONT(20);
         [self addSubview:customLab];
     }
     return self;

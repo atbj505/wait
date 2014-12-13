@@ -15,8 +15,7 @@
 @implementation ValidateViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"认证页";
-    self.navigationItem.titleView = [TitleView TitleViewWithTitle:@"认证页"];
+    [self naviTitle:@"认证页"];
     [self backImage:@"yanzhengye.png"];
     [self updateUI];
     [self nickNameAlert];
@@ -119,7 +118,10 @@
 }
 - (void)goBackToRoot{
     [self.validateView.loginTextField resignFirstResponder];
-    [self.navigationController popToRootViewControllerAnimated:YES];
-    
+    if (self.isFromEdit) {
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+    }else{
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 @end

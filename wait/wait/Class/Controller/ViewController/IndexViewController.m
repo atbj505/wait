@@ -45,8 +45,7 @@
 - (void)updateUI{
     NSLog(@"%@",NSHomeDirectory());
     self.models = [NSMutableArray array];
-    self.title = @"首页";
-    self.navigationItem.titleView = [TitleView TitleViewWithTitle:@"首页"];
+    [self naviTitle:@"首页"];
     //  segment
     [self createSegment];
     //  头像默认图片
@@ -55,13 +54,8 @@
     [self createNick];
 }
 - (void)createSegment{
-    self.segmentedControl = [[RYSegmentedControl alloc] initWithSectionImages:@[[UIImage imageNamed:@"xinqing.png"],[UIImage imageNamed:@"tixing.png"]] sectionSelectedImages:@[[UIImage imageNamed:@"dianjixinqing.png"],[UIImage imageNamed:@"dianjitixing.png"]] titlesForSections:@[@" ", @" "]];
+    self.segmentedControl = [[RYSegmentedControl alloc] initWithSectionImages:@[[UIImage imageNamed:@"xinqing.png"],[UIImage imageNamed:@"tixing.png"]] sectionSelectedImages:@[[UIImage imageNamed:@"dianjixinqing.png"],[UIImage imageNamed:@"dianjitixing.png"]] titlesForSections:@[@" ", @" "] delegate:self];
     [self.view addSubview:self.segmentedControl];
-    self.segmentedControl.scrollView.delegate =self;
-    self.segmentedControl.firstTableView.delegate = self;
-    self.segmentedControl.firstTableView.dataSource = self;
-    self.segmentedControl.secondTableView.delegate = self;
-    self.segmentedControl.secondTableView.dataSource = self;
     [self.segmentedControl.segmented addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
 }
 - (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
@@ -125,8 +119,7 @@
     }];
 }
 - (void)createBubbleMenu{
-    self.downMenuButton = [[RYBubbleButton alloc] initWithFrame:CGRectMake(20.f,87.f,57.0f,57.0f)expansionDirection:DirectionRight];
-    self.downMenuButton.delegate = self;
+    self.downMenuButton = [[RYBubbleButton alloc] initWithFrame:CGRectMake(20.f,87.f,57.0f,57.0f)expansionDirection:DirectionRight delegate:self];
     for (UIButton *button in self.downMenuButton.buttons) {
         [button addTarget:self action:@selector(tapButton:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -238,7 +231,7 @@
         if(imageData){
             self.photoImage.image = [UIImage imageWithData:imageData];
         }else{
-            [self.photoImage sd_setImageWithURL:[NSURL URLWithString:photoUrl] placeholderImage:[UIImage imageNamed:@"touxiang.fw.png"]];
+            [self.photoImage withImageName:photoUrl andPlaceHolder:@"touxiang.fw.png"];
         }
     }
 }

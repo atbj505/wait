@@ -23,6 +23,7 @@
 #import "AlertContentView.h"
 #import "SVProgressHUD.h"
 #import "RYUtils.h"
+#import "RYImageView.h"
 #import "MobClick.h"
 
 //#define MAINCONFIG @"http://42.62.8.172/zp-core/interface/maiconfig.php?var=%@"

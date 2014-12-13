@@ -7,8 +7,19 @@
 //
 
 #import "RYViewController.h"
+#import "AddressBookViewController.h"
+#import "LogInViewController.h"
 #import "Catelog.h"
-@interface EditViewController : RYViewController
+#import "GCPlaceholderTextView.h"
+#import "ColorBoardView.h"
+#import "Templet.h"
+#import "UIImageView+WebCache.h"
+#import "RYTextView.h"
+#import "MailObject.h"
+#import "EditButtonsView.h"
+
+@interface EditViewController : RYViewController<UITextViewDelegate>
 
 @property(nonatomic, strong)CatelogModel *catelogModel;
+
 @end

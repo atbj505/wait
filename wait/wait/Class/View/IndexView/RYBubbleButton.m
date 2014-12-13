@@ -10,11 +10,12 @@
 
 @implementation RYBubbleButton
 
--(id)initWithFrame:(CGRect)frame expansionDirection:(ExpansionDirection)direction{
+-(id)initWithFrame:(CGRect)frame expansionDirection:(ExpansionDirection)direction delegate:(id)vc{
     self = [super initWithFrame:frame expansionDirection:direction];
     if (self) {
         self.homeButtonView = [self createHomeView];
         [self addButtons:[self createDemoButtonArray]];
+        self.delegate = vc;
     }
     return self;
 }

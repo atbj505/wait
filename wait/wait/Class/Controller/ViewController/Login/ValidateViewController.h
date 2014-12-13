@@ -13,4 +13,5 @@
 
 @interface ValidateViewController : RYViewController<UITextFieldDelegate>
 @property (nonatomic, strong)NSString *mobile;
+@property (nonatomic, assign)BOOL isFromEdit;
 @end

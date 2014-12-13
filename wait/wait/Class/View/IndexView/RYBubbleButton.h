@@ -9,5 +9,5 @@
 #import "DWBubbleMenuButton.h"
 
 @interface RYBubbleButton : DWBubbleMenuButton
-
+-(id)initWithFrame:(CGRect)frame expansionDirection:(ExpansionDirection)direction delegate:(id)vc;
 @end

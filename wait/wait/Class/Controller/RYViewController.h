@@ -9,7 +9,7 @@
 #import "QBaseViewController.h"
 
 @interface RYViewController : QBaseViewController
-@property (nonatomic, strong)UIImageView *photoImage;
+@property (nonatomic, strong)RYImageView *photoImage;
 /**
  *  背景图片
  */
@@ -18,4 +18,8 @@
  *  头像图片
  */
 - (void)photoImage:(CGRect)frame;
+/**
+ *  导航标题
+ */
+- (void)naviTitle:(NSString *)string;
 @end

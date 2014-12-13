@@ -31,7 +31,7 @@
 }
 - (void)photoImage:(CGRect)frame{
     //  头像默认图片
-    self.photoImage = [[UIImageView alloc]initWithFrame:frame];
+    self.photoImage = [[RYImageView alloc]initWithFrame:frame];
     self.photoImage.image = [UIImage imageNamed:@"touxiang.fw.png"];
     self.photoImage.layer.cornerRadius = self.photoImage.frame.size.height/2;
     self.photoImage.layer.masksToBounds = YES;
@@ -45,5 +45,9 @@
 - (BOOL)prefersStatusBarHidden
 {
     return NO;
+}
+- (void)naviTitle:(NSString *)string{
+    self.title = string;
+    self.navigationItem.titleView = [TitleView TitleViewWithTitle:string];
 }
 @end

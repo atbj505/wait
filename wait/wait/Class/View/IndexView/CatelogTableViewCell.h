@@ -14,7 +14,7 @@
 
 @interface CatelogTableViewCell : UITableViewCell
 @property (nonatomic, strong)CatelogModel *model;
-@property (strong, nonatomic) UIImageView *photoImage;
+@property (strong, nonatomic) RYImageView *photoImage;
 @property (strong, nonatomic) UILabel *catelogIntro;
 @property (nonatomic, assign) BOOL isClick;
 @end

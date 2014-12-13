@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57BBA67F1A3C349D004E0D33 /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BBA67E1A3C349D004E0D33 /* AddressBookViewController.m */; };
+		57BBA6821A3C3568004E0D33 /* GCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BBA6811A3C3568004E0D33 /* GCPlaceholderTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		57BBA6851A3C3589004E0D33 /* ColorBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BBA6841A3C3589004E0D33 /* ColorBoardView.m */; };
+		57BBA68A1A3C3BE5004E0D33 /* RYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BBA6891A3C3BE5004E0D33 /* RYTextView.m */; };
+		57BBA68D1A3C48E7004E0D33 /* RYImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BBA68C1A3C48E7004E0D33 /* RYImageView.m */; };
+		57BBA6901A3C4BF1004E0D33 /* EditButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BBA68F1A3C4BF1004E0D33 /* EditButtonsView.m */; };
 		57CCAC2D1A3A85F000ADCDE1 /* PersonEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CCAC2C1A3A85F000ADCDE1 /* PersonEditViewController.m */; };
 		57CCAC311A3A876B00ADCDE1 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CCAC301A3A876B00ADCDE1 /* LogInViewController.m */; };
 		57CCAC341A3A878B00ADCDE1 /* ValidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CCAC331A3A878B00ADCDE1 /* ValidateViewController.m */; };
@@ -236,6 +242,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57BBA67D1A3C349D004E0D33 /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressBookViewController.h; path = "Class/Controller/ViewController/Edit&Send/AddressBookViewController.h"; sourceTree = "<group>"; };
+		57BBA67E1A3C349D004E0D33 /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressBookViewController.m; path = "Class/Controller/ViewController/Edit&Send/AddressBookViewController.m"; sourceTree = "<group>"; };
+		57BBA6801A3C3568004E0D33 /* GCPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCPlaceholderTextView.h; path = Class/Utils/GCPlaceholderTextView.h; sourceTree = "<group>"; };
+		57BBA6811A3C3568004E0D33 /* GCPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCPlaceholderTextView.m; path = Class/Utils/GCPlaceholderTextView.m; sourceTree = "<group>"; };
+		57BBA6831A3C3589004E0D33 /* ColorBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorBoardView.h; path = Class/Utils/ColorBoardView.h; sourceTree = "<group>"; };
+		57BBA6841A3C3589004E0D33 /* ColorBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorBoardView.m; path = Class/Utils/ColorBoardView.m; sourceTree = "<group>"; };
+		57BBA6861A3C373C004E0D33 /* Templet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Templet.h; path = Class/Model/Templet/Templet.h; sourceTree = "<group>"; };
+		57BBA6881A3C3BE5004E0D33 /* RYTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RYTextView.h; path = Class/View/EditView/RYTextView.h; sourceTree = "<group>"; };
+		57BBA6891A3C3BE5004E0D33 /* RYTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RYTextView.m; path = Class/View/EditView/RYTextView.m; sourceTree = "<group>"; };
+		57BBA68B1A3C48E7004E0D33 /* RYImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RYImageView.h; path = Class/View/RYImageView.h; sourceTree = "<group>"; };
+		57BBA68C1A3C48E7004E0D33 /* RYImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RYImageView.m; path = Class/View/RYImageView.m; sourceTree = "<group>"; };
+		57BBA68E1A3C4BF1004E0D33 /* EditButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditButtonsView.h; path = Class/View/EditView/EditButtonsView.h; sourceTree = "<group>"; };
+		57BBA68F1A3C4BF1004E0D33 /* EditButtonsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditButtonsView.m; path = Class/View/EditView/EditButtonsView.m; sourceTree = "<group>"; };
 		57CCAC2B1A3A85F000ADCDE1 /* PersonEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonEditViewController.h; path = Class/Controller/ViewController/PersonCenter/PersonEditViewController.h; sourceTree = "<group>"; };
 		57CCAC2C1A3A85F000ADCDE1 /* PersonEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonEditViewController.m; path = Class/Controller/ViewController/PersonCenter/PersonEditViewController.m; sourceTree = "<group>"; };
 		57CCAC2F1A3A876B00ADCDE1 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogInViewController.h; path = Class/Controller/ViewController/Login/LogInViewController.h; sourceTree = "<group>"; };
@@ -684,6 +703,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57BBA6871A3C3B99004E0D33 /* EditView */ = {
+			isa = PBXGroup;
+			children = (
+				57BBA6881A3C3BE5004E0D33 /* RYTextView.h */,
+				57BBA6891A3C3BE5004E0D33 /* RYTextView.m */,
+				57BBA68E1A3C4BF1004E0D33 /* EditButtonsView.h */,
+				57BBA68F1A3C4BF1004E0D33 /* EditButtonsView.m */,
+			);
+			name = EditView;
+			sourceTree = "<group>";
+		};
 		57CCAC2E1A3A86F000ADCDE1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,6 +750,8 @@
 			children = (
 				57D058A31A3A7CE600918122 /* EditViewController.h */,
 				57D058A41A3A7CE600918122 /* EditViewController.m */,
+				57BBA67D1A3C349D004E0D33 /* AddressBookViewController.h */,
+				57BBA67E1A3C349D004E0D33 /* AddressBookViewController.m */,
 			);
 			name = "Edit&Send";
 			sourceTree = "<group>";
@@ -873,9 +905,12 @@
 			children = (
 				57D249791A3841160009910F /* TitleView.h */,
 				57D2497A1A3841160009910F /* TitleView.m */,
+				57BBA68B1A3C48E7004E0D33 /* RYImageView.h */,
+				57BBA68C1A3C48E7004E0D33 /* RYImageView.m */,
 				57CCAC3A1A3AC2A200ADCDE1 /* ValidateView */,
 				57CCAC351A3A8B6000ADCDE1 /* LoginView */,
 				57D248081A382C6F0009910F /* IndexView */,
+				57BBA6871A3C3B99004E0D33 /* EditView */,
 				57D248001A3828D40009910F /* IntroView */,
 			);
 			name = View;
@@ -1553,6 +1588,10 @@
 				57D6047F1A398C9300168910 /* RYUtils.m */,
 				57CCAC491A3ADED300ADCDE1 /* AlertContentView.h */,
 				57CCAC4A1A3ADED300ADCDE1 /* AlertContentView.m */,
+				57BBA6801A3C3568004E0D33 /* GCPlaceholderTextView.h */,
+				57BBA6811A3C3568004E0D33 /* GCPlaceholderTextView.m */,
+				57BBA6831A3C3589004E0D33 /* ColorBoardView.h */,
+				57BBA6841A3C3589004E0D33 /* ColorBoardView.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1653,6 +1692,7 @@
 		57D248141A3834360009910F /* Templet */ = {
 			isa = PBXGroup;
 			children = (
+				57BBA6861A3C373C004E0D33 /* Templet.h */,
 				57D249671A3839780009910F /* TempletModel.h */,
 				57D249681A3839780009910F /* TempletModel.m */,
 				57D249691A3839780009910F /* TempletOperation.h */,
@@ -1992,6 +2032,7 @@
 				57D247001A37E5340009910F /* QBasePushOperation.m in Sources */,
 				57D247121A37E5340009910F /* AFSecurityPolicy.m in Sources */,
 				57D246121A37E4990009910F /* MosaicDataView.m in Sources */,
+				57BBA68D1A3C48E7004E0D33 /* RYImageView.m in Sources */,
 				57D246F71A37E5340009910F /* QBaseViewController+KeyBoardObserver.m in Sources */,
 				57D247FC1A381C240009910F /* View+MASAdditions.m in Sources */,
 				57D248441A3836430009910F /* SendMessageOperation.m in Sources */,
@@ -2014,6 +2055,7 @@
 				57D247131A37E5340009910F /* AFURLConnectionOperation.m in Sources */,
 				57D249601A38395C0009910F /* MessagesOperation.m in Sources */,
 				57D247261A37E5340009910F /* FMResultSet.m in Sources */,
+				57BBA6821A3C3568004E0D33 /* GCPlaceholderTextView.m in Sources */,
 				57D246111A37E4990009910F /* TwoDimentionalArray.m in Sources */,
 				57D2482A1A38356D0009910F /* UpstatusModel.m in Sources */,
 				57D246131A37E4990009910F /* MosaicView.m in Sources */,
@@ -2033,6 +2075,7 @@
 				57D247271A37E5340009910F /* JSONKit.m in Sources */,
 				57D058A91A3A809700918122 /* PersonCenterViewController.m in Sources */,
 				57D2470D1A37E5340009910F /* QBaseUserInfo.m in Sources */,
+				57BBA6901A3C4BF1004E0D33 /* EditButtonsView.m in Sources */,
 				57CCAC2D1A3A85F000ADCDE1 /* PersonEditViewController.m in Sources */,
 				57D2472D1A37E5340009910F /* JSONAPI.m in Sources */,
 				57D247F41A381C240009910F /* MASCompositeConstraint.m in Sources */,
@@ -2066,6 +2109,7 @@
 				57D2470A1A37E5340009910F /* QBaseFileManager.m in Sources */,
 				57D2473D1A37E5340009910F /* UIButton+WebCache.m in Sources */,
 				57D247F81A381C240009910F /* MASViewAttribute.m in Sources */,
+				57BBA68A1A3C3BE5004E0D33 /* RYTextView.m in Sources */,
 				57D2472E1A37E5340009910F /* JSONHTTPClient.m in Sources */,
 				57D058A51A3A7CE600918122 /* EditViewController.m in Sources */,
 				57D246101A37E4990009910F /* MosaicData.m in Sources */,
@@ -2104,6 +2148,7 @@
 				57D247451A37E5340009910F /* TMDiskCache.m in Sources */,
 				57D247081A37E5340009910F /* QBaseNetworkObserver.m in Sources */,
 				57D247F51A381C240009910F /* MASConstraint.m in Sources */,
+				57BBA67F1A3C349D004E0D33 /* AddressBookViewController.m in Sources */,
 				57D249651A38396A0009910F /* ValidateModel.m in Sources */,
 				57D247251A37E5340009910F /* FMDatabaseQueue.m in Sources */,
 				57D247B41A3817C70009910F /* RYNavigationController.m in Sources */,
@@ -2124,6 +2169,7 @@
 				57D248501A3836AA0009910F /* UpValiOperation.m in Sources */,
 				57D247431A37E5340009910F /* UIView+WebCacheOperation.m in Sources */,
 				57D2470C1A37E5340009910F /* QBaseLocationGeocoder.m in Sources */,
+				57BBA6851A3C3589004E0D33 /* ColorBoardView.m in Sources */,
 				57D247B31A3817C70009910F /* IndexViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
