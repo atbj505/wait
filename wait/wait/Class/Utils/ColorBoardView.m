@@ -39,7 +39,7 @@
 
 - (void)colorBoardAnimation{
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.frame = CGRectMake(SCREENHEIGHT - 260, SCREENHEIGHT - 245, 260, 110);
+        self.frame = CGRectMake(SCREENWIDTH - 260, SCREENHEIGHT - 245, 260, 110);
     } completion:^(BOOL finished) {
         for (int i = 0; i < 10; i++) {
             UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(i%5*52, i/5*55, 50, 50)];

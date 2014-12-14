@@ -26,8 +26,8 @@
 #import "RYImageView.h"
 #import "MobClick.h"
 
-//#define MAINCONFIG @"http://42.62.8.172/zp-core/interface/maiconfig.php?var=%@"
-#define MAINCONFIG @"http://192.168.10.216/pic/zp-core/interface/maiconfig.php?var=%@"
+#define MAINCONFIG @"http://42.62.8.172/zp-core/interface/maiconfig.php?var=%@"
+//#define MAINCONFIG @"http://192.168.10.216/pic/zp-core/interface/maiconfig.php?var=%@"
 #define VERSION @"dd_1"
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height

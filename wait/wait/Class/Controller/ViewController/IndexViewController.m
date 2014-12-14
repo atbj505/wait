@@ -54,7 +54,7 @@
     [self createNick];
 }
 - (void)createSegment{
-    self.segmentedControl = [[RYSegmentedControl alloc] initWithSectionImages:@[[UIImage imageNamed:@"xinqing.png"],[UIImage imageNamed:@"tixing.png"]] sectionSelectedImages:@[[UIImage imageNamed:@"dianjixinqing.png"],[UIImage imageNamed:@"dianjitixing.png"]] titlesForSections:@[@" ", @" "] delegate:self];
+    self.segmentedControl = [[RYSegmentedControl alloc] initWithSectionImages:@[[UIImage imageNamed:@"xinqing.png"],[UIImage imageNamed:@"tixing.png"]] sectionSelectedImages:@[[UIImage imageNamed:@"dianjixinqing.png"],[UIImage imageNamed:@"dianjitixing.png"]] titlesForSections:@[@" ", @" "] frame:CGRectMake(0, 164, SCREENWIDTH, SCREENHEIGHT - 164) delegate:self];
     [self.view addSubview:self.segmentedControl];
     [self.segmentedControl.segmented addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
 }

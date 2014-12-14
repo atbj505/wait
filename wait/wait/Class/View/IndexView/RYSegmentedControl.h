@@ -20,5 +20,9 @@
 
 @property (nonatomic, strong)RYTableView *secondTableView;
 
-- (instancetype)initWithSectionImages:(NSArray *)sectionImages sectionSelectedImages:(NSArray *)sectionSelectedImages titlesForSections:(NSArray *)sectiontitles delegate:(id)vc;
+- (instancetype)initWithSectionImages:(NSArray *)sectionImages sectionSelectedImages:(NSArray *)sectionSelectedImages titlesForSections:(NSArray *)sectiontitles frame:(CGRect)frame delegate:(id)vc;
+
+- (void)addScrollView:(CGRect)frame :(id)vc;
+
+- (void)addTableView:(CGRect)frame :(id)vc;
 @end

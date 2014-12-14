@@ -25,9 +25,9 @@
     [self.localTemplet setImage:[UIImage imageNamed:names[1]] forState:UIControlStateNormal];
     [self addSubview:self.localTemplet];
     
-    self.changeFont = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 57, 47)];
-    [self.changeFont setImage:[UIImage imageNamed:names[2]] forState:UIControlStateNormal];
-    [self addSubview:self.changeFont];
+    self.font = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 57, 47)];
+    [self.font setImage:[UIImage imageNamed:names[2]] forState:UIControlStateNormal];
+    [self addSubview:self.font];
     
     [self.templet mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.mas_left);
@@ -43,7 +43,7 @@
         make.height.mas_equalTo(@47);
     }];
     
-    [self.changeFont mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.font mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.mas_right);
         make.bottom.mas_equalTo(self.mas_bottom);
         make.width.mas_equalTo(@57);

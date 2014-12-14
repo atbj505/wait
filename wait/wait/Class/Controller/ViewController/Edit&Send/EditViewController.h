@@ -17,8 +17,10 @@
 #import "RYTextView.h"
 #import "MailObject.h"
 #import "EditButtonsView.h"
+#import "MosaicViewController.h"
+#import "UIImage+ProportionalFill.h"
 
-@interface EditViewController : RYViewController<UITextViewDelegate>
+@interface EditViewController : RYViewController<UITextViewDelegate,UIActionSheetDelegate,MosaicViewControllerDelegate,ColorBoardViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate>
 
 @property(nonatomic, strong)CatelogModel *catelogModel;
 

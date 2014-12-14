@@ -11,7 +11,7 @@
 @interface EditButtonsView : UIView
 @property (nonatomic, strong)UIButton *templet;
 @property (nonatomic, strong)UIButton *localTemplet;
-@property (nonatomic, strong)UIButton *changeFont;
+@property (nonatomic, strong)UIButton *font;
 
 -(instancetype)initWithFrame:(CGRect)frame names:(NSArray *)names;
 @end

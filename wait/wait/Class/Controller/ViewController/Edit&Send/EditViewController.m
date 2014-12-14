@@ -25,6 +25,12 @@
 @property (nonatomic, strong)NSString *locationCity;
 //  文本位置
 @property (nonatomic, assign)CGPoint contentPoint;
+//  本地模板/标准模板判断条件
+@property (nonatomic, assign)BOOL isSysteml;
+//  颜色
+@property (nonatomic, strong)NSString *colorString;
+//  调色板弹出判断条件
+@property (nonatomic ,assign)BOOL changeFontIsTap;
 @end
 
 @implementation EditViewController
@@ -74,12 +80,77 @@
 }
 - (void)addButtons{
     EditButtonsView *buttonView = [[EditButtonsView alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 50) names:@[@"muban.png",@"xiangce.png",@"ziti.png"]];
+    [buttonView.templet addTarget:self action:@selector(changeTemplet) forControlEvents:UIControlEventTouchUpInside];
+    [buttonView.localTemplet addTarget:self action:@selector(changelocalTemplet) forControlEvents:UIControlEventTouchUpInside];
+    [buttonView.font addTarget:self action:@selector(changeFont) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonView];
     [buttonView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.view.mas_bottom);
-        make.width.mas_equalTo(SCREENWIDTH);
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-10);
+        make.left.mas_equalTo(self.view.mas_left).offset(10);
+        make.right.mas_equalTo(self.view.mas_right).offset(-10);
         make.height.mas_equalTo(@50);
     }];
+}
+- (void)changeTemplet{
+    self.isSysteml = YES;
+    MosaicViewController *mosiacVC = [[MosaicViewController alloc]initWithNibName:nil bundle:nil];;
+    mosiacVC.delegate = self;
+    mosiacVC.catalogID = self.catelogModel.catalogID;
+    [MobClick event:@"changeTemp"];
+    [self.navigationController pushViewController:mosiacVC animated:YES];
+}
+- (void)changelocalTemplet{
+    [self photoChooseShowActionSheetInView:self.view];
+}
+- (void)changeFont{
+    if (self.changeFontIsTap) {
+        [self.colorBoard removeFromSuperview];
+        self.changeFontIsTap = NO;
+    }else{
+        self.colorBoard = [[ColorBoardView alloc]initWithFrame:CGRectMake(SCREENWIDTH - 265, SCREENHEIGHT, 260, 50)];
+        self.colorBoard.delegate = self;
+        [MobClick event:@"changeText"];
+        [self.view addSubview:self.colorBoard];
+        self.changeFontIsTap = YES;
+    }
+}
+#pragma mark -
+#pragma mark MosaicViewController 代理方法
+-(void)getSelectImageName:(MosaicViewController *)slideVC and:(NSString *)imageName and:(NSString *)templetID{
+    [slideVC.navigationController popViewControllerAnimated:YES];
+    [self.templetImage withImageName:imageName andPlaceHolder:@"bianjiye.png"];
+    self.templetID = imageName;
+}
+#pragma mark -
+#pragma mark UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    [self photoChooseWithActionSheet:actionSheet clickedButtonAtIndex:buttonIndex];
+}
+#pragma mark -
+#pragma mark UIImagePickerController 代理方法
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    UIImage *image = nil;
+    if ([info objectForKey:UIImagePickerControllerEditedImage]) {
+        image = [info objectForKey:UIImagePickerControllerEditedImage];
+        image = [image imageToFitSize:self.templetImage.bounds.size method:MGImageResizeCrop];
+    }else{
+        image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    }
+    self.templetImage.image = image;
+    //  设置为非系统提供模板
+    _isSysteml = NO;
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.4);;
+    [[NSUserDefaults standardUserDefaults]setValue:imageData forKey:@"templetImage"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    self.templetID = @"";
+}
+#pragma mark -
+#pragma mark ColorBoardViewDelegate
+-(void)getSelectedColor:(ColorBoardView *)colorBoard andColor:(UIColor *)color andColorString:(NSString *)colorString{
+    self.templetContent.textColor = color;
+    self.colorString = colorString;
 }
 #pragma mark -
 #pragma mark UITextViewDelegate
@@ -117,6 +188,9 @@ NSUInteger tempLine = 1;
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.templetContent resignFirstResponder];
+    if (self.changeFontIsTap) {
+        [self.colorBoard removeFromSuperview];
+    }
 }
 - (void)done{
     if ([[QBaseUserInfo sharedQBaseUserInfo]userInfo]) {

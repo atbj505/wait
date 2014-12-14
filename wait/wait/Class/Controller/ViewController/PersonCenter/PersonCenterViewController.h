@@ -7,7 +7,14 @@
 //
 
 #import "RYViewController.h"
+#import "QBaseWaterDropRefreshTableView.h"
+#import "MailViewController.h"
+#import "PersonCenterSegmentedControl.h"
+#import "PersonTableViewCell.h"
+#import "PersonCountLabel.h"
+#import "Messages.h"
+#import "MyMessages.h"
 
-@interface PersonCenterViewController : RYViewController
+@interface PersonCenterViewController : RYViewController<UITableViewDataSource,UITableViewDelegate,QBaseTableViewDelegate,UIScrollViewDelegate,MailViewControllerDelegate>
 
 @end
