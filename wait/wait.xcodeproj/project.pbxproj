@@ -231,6 +231,7 @@
 		57D2498E1A3847500009910F /* CatelogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D2498D1A3847500009910F /* CatelogTableViewCell.m */; };
 		57D249911A3847BE0009910F /* UIImage+RTTint.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D249901A3847BE0009910F /* UIImage+RTTint.m */; };
 		57D249941A3851970009910F /* NickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D249931A3851970009910F /* NickView.m */; };
+		57D5C01B1A3EDDB40092F77E /* PersonEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D5C01A1A3EDDB40092F77E /* PersonEditTableViewCell.m */; };
 		57D6046F1A396C7B00168910 /* PXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D6046C1A396C7B00168910 /* PXAlertView.m */; };
 		57D604701A396C7B00168910 /* PXAlertView+Customization.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D6046E1A396C7B00168910 /* PXAlertView+Customization.m */; };
 		57D604731A396D3C00168910 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D604721A396D3C00168910 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -685,6 +686,8 @@
 		57D249901A3847BE0009910F /* UIImage+RTTint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RTTint.m"; path = "Class/Catelgory/UIImage+RTTint.m"; sourceTree = "<group>"; };
 		57D249921A3851970009910F /* NickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NickView.h; path = Class/View/IndexView/NickView.h; sourceTree = "<group>"; };
 		57D249931A3851970009910F /* NickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NickView.m; path = Class/View/IndexView/NickView.m; sourceTree = "<group>"; };
+		57D5C0191A3EDDB40092F77E /* PersonEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonEditTableViewCell.h; path = Class/View/PeronEditVIew/PersonEditTableViewCell.h; sourceTree = "<group>"; };
+		57D5C01A1A3EDDB40092F77E /* PersonEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonEditTableViewCell.m; path = Class/View/PeronEditVIew/PersonEditTableViewCell.m; sourceTree = "<group>"; };
 		57D6046B1A396C7B00168910 /* PXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXAlertView.h; path = Class/Utils/PXAlertView.h; sourceTree = "<group>"; };
 		57D6046C1A396C7B00168910 /* PXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXAlertView.m; path = Class/Utils/PXAlertView.m; sourceTree = "<group>"; };
 		57D6046D1A396C7B00168910 /* PXAlertView+Customization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PXAlertView+Customization.h"; path = "Class/Utils/PXAlertView+Customization.h"; sourceTree = "<group>"; };
@@ -961,6 +964,7 @@
 				57D2497A1A3841160009910F /* TitleView.m */,
 				57BBA68B1A3C48E7004E0D33 /* RYImageView.h */,
 				57BBA68C1A3C48E7004E0D33 /* RYImageView.m */,
+				57D5C0181A3EDD780092F77E /* PeronEditVIew */,
 				57C962B81A3D7A900026B37C /* PersonCenter */,
 				57CCAC3A1A3AC2A200ADCDE1 /* ValidateView */,
 				57CCAC351A3A8B6000ADCDE1 /* LoginView */,
@@ -1920,6 +1924,15 @@
 			name = Mail;
 			sourceTree = "<group>";
 		};
+		57D5C0181A3EDD780092F77E /* PeronEditVIew */ = {
+			isa = PBXGroup;
+			children = (
+				57D5C0191A3EDDB40092F77E /* PersonEditTableViewCell.h */,
+				57D5C01A1A3EDDB40092F77E /* PersonEditTableViewCell.m */,
+			);
+			name = PeronEditVIew;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2064,6 +2077,7 @@
 				57D246FF1A37E5340009910F /* QBasePush.m in Sources */,
 				57CCAC401A3AC63F00ADCDE1 /* LogBaseView.m in Sources */,
 				57D247441A37E5340009910F /* TMCache.m in Sources */,
+				57D5C01B1A3EDDB40092F77E /* PersonEditTableViewCell.m in Sources */,
 				57CCAC381A3A8B7D00ADCDE1 /* LoginView.m in Sources */,
 				57D247B71A3818B80009910F /* IntroViewController.m in Sources */,
 				57D2473C1A37E5340009910F /* SDWebImagePrefetcher.m in Sources */,

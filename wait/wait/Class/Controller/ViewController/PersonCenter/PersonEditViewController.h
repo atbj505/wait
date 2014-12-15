@@ -7,7 +7,11 @@
 //
 
 #import "RYViewController.h"
+#import <MessageUI/MFMessageComposeViewController.h>
+#import "PersonInfo.h"
+#import "UpVali.h"
+#import "PersonEditTableViewCell.h"
 
-@interface PersonEditViewController : RYViewController
+@interface PersonEditViewController : RYViewController< UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,MFMessageComposeViewControllerDelegate>
 
 @end

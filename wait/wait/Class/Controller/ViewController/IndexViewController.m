@@ -128,9 +128,9 @@
 - (void)tapButton:(UIButton *)sender{
     [self.blurView removeFromSuperview];
     [self.smallBlurView removeFromSuperview];
-    if ([[QBaseUserInfo sharedQBaseUserInfo]userInfo] == nil) {
-        [self pushToLogInView];
-    }else
+//    if ([[QBaseUserInfo sharedQBaseUserInfo]userInfo] == nil) {
+//        [self pushToLogInView];
+//    }else
     {
         switch (sender.tag) {
             case 0:{
