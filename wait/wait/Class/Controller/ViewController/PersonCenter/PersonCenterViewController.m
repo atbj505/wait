@@ -11,6 +11,9 @@
 @interface PersonCenterViewController ()
 @property (nonatomic, strong)PersonCenterSegmentedControl *segmentedControl;
 @property (nonatomic, strong)PersonCountLabel *countLabel;
+@property (nonatomic, strong)NSArray *sendMails;
+@property (nonatomic, strong)NSArray *receiveMails;
+@property (nonatomic, strong)NSArray *mails;
 @end
 
 
@@ -48,7 +51,7 @@
     NSDictionary *dic =[[QBaseUserInfo sharedQBaseUserInfo]userInfo];
     NSString *uid = [dic objectForKey:@"UID"];
     operation.params = @{
-                         @"rid":uid
+                         @"rid":@"40"
                          };
     [operation start];
 }
@@ -57,7 +60,7 @@
     NSDictionary *dic =[[QBaseUserInfo sharedQBaseUserInfo]userInfo];
     NSString *uid = [dic objectForKey:@"UID"];
     operation.params = @{
-                         @"sid":uid
+                         @"sid":@"40"
                          };
     [operation start];
 }
@@ -65,11 +68,16 @@
 #pragma mark 网络请求成功回调
 - (void)netOperationDidFinish:(QBaseNetOperation *)operation{
     [SVProgressHUD dismiss];
-    
     if ([operation isKindOfClass:[MessagesOperation class]]) {
-        
+        MessagesModel *model = [[MessagesModel alloc]init];
+        self.receiveMails = [model JsonParserWithReceive:operation.responseData];
+        self.mails = self.receiveMails;
+        [self.segmentedControl.firstDropTableView reloadData];
     }else if([operation isKindOfClass:[MyMessagesOperation class]]){
-        
+        MyMessagesModel *model = [[MyMessagesModel alloc]init];
+        self.sendMails = [model JsonParserWithSend:operation.responseData];
+        self.mails = self.receiveMails;
+        [self.segmentedControl.secondDropTableView reloadData];
     }
 }
 #pragma mark -
@@ -129,7 +137,7 @@
     return 92;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.mails.count;
 }
 static NSString *identifier = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -137,13 +145,31 @@ static NSString *identifier = @"cell";
     if (!cell) {
         cell = [[PersonTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.textLabel.text = @"11";
+    if (tableView.tag == 1) {
+        cell.isSend = YES;
+        cell.receiveModel = self.receiveMails[indexPath.row];
+    }else{
+        cell.isSend = NO;
+        cell.sendModel = self.sendMails[indexPath.row];
+    }
     
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    MailViewController *mailVC = [[MailViewController alloc]initWithNibName:nil bundle:nil];
+    if (tableView.tag == 1) {
+        MessagesModel *model = self.receiveMails[indexPath.row];
+        mailVC.receiveModel = model;
+    }else{
+        MyMessagesModel *model = self.sendMails[indexPath.row];
+        mailVC.sendModel = model;
+        //_index = indexPath.row;
+    }
 }
 - (void)tableViewBegainRefresh:(QBaseTableView *)tableView{
+    //  接受信息请求
+    [self receiveMessageOperation];
+    //  发送信息请求
+    [self sendMessageOperation];
 }
 @end

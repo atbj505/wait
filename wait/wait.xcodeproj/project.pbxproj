@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5790824A1A3FCD7E0053E636 /* ANBackImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579082491A3FCD7E0053E636 /* ANBackImageView.m */; };
+		5790824D1A3FCDD80053E636 /* ScratchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5790824C1A3FCDD80053E636 /* ScratchView.m */; };
+		579082501A3FCDFB0053E636 /* RQShineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5790824F1A3FCDFB0053E636 /* RQShineLabel.m */; };
+		579082531A3FCE1B0053E636 /* STScratchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579082521A3FCE1B0053E636 /* STScratchView.m */; };
+		579082561A3FDD1F0053E636 /* SendInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579082551A3FDD1F0053E636 /* SendInfoView.m */; };
 		57BBA67F1A3C349D004E0D33 /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BBA67E1A3C349D004E0D33 /* AddressBookViewController.m */; };
 		57BBA6821A3C3568004E0D33 /* GCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BBA6811A3C3568004E0D33 /* GCPlaceholderTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		57BBA6851A3C3589004E0D33 /* ColorBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BBA6841A3C3589004E0D33 /* ColorBoardView.m */; };
@@ -251,6 +256,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		579082461A3FCCDE0053E636 /* Upstatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Upstatus.h; path = Class/Model/Upstatus/Upstatus.h; sourceTree = "<group>"; };
+		579082481A3FCD7E0053E636 /* ANBackImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANBackImageView.h; path = Class/View/MailView/ANBackImageView.h; sourceTree = "<group>"; };
+		579082491A3FCD7E0053E636 /* ANBackImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANBackImageView.m; path = Class/View/MailView/ANBackImageView.m; sourceTree = "<group>"; };
+		5790824B1A3FCDD80053E636 /* ScratchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScratchView.h; path = Class/View/MailView/ScratchView.h; sourceTree = "<group>"; };
+		5790824C1A3FCDD80053E636 /* ScratchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScratchView.m; path = Class/View/MailView/ScratchView.m; sourceTree = "<group>"; };
+		5790824E1A3FCDFB0053E636 /* RQShineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RQShineLabel.h; path = Class/View/MailView/RQShineLabel.h; sourceTree = "<group>"; };
+		5790824F1A3FCDFB0053E636 /* RQShineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RQShineLabel.m; path = Class/View/MailView/RQShineLabel.m; sourceTree = "<group>"; };
+		579082511A3FCE1B0053E636 /* STScratchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STScratchView.h; path = Class/View/MailView/STScratchView.h; sourceTree = "<group>"; };
+		579082521A3FCE1B0053E636 /* STScratchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STScratchView.m; path = Class/View/MailView/STScratchView.m; sourceTree = "<group>"; };
+		579082541A3FDD1F0053E636 /* SendInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendInfoView.h; path = Class/View/MailView/SendInfoView.h; sourceTree = "<group>"; };
+		579082551A3FDD1F0053E636 /* SendInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendInfoView.m; path = Class/View/MailView/SendInfoView.m; sourceTree = "<group>"; };
 		57BBA67D1A3C349D004E0D33 /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressBookViewController.h; path = "Class/Controller/ViewController/Edit&Send/AddressBookViewController.h"; sourceTree = "<group>"; };
 		57BBA67E1A3C349D004E0D33 /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressBookViewController.m; path = "Class/Controller/ViewController/Edit&Send/AddressBookViewController.m"; sourceTree = "<group>"; };
 		57BBA6801A3C3568004E0D33 /* GCPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCPlaceholderTextView.h; path = Class/Utils/GCPlaceholderTextView.h; sourceTree = "<group>"; };
@@ -732,6 +748,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		579082471A3FCD4F0053E636 /* MailView */ = {
+			isa = PBXGroup;
+			children = (
+				579082481A3FCD7E0053E636 /* ANBackImageView.h */,
+				579082491A3FCD7E0053E636 /* ANBackImageView.m */,
+				5790824B1A3FCDD80053E636 /* ScratchView.h */,
+				5790824C1A3FCDD80053E636 /* ScratchView.m */,
+				579082511A3FCE1B0053E636 /* STScratchView.h */,
+				579082521A3FCE1B0053E636 /* STScratchView.m */,
+				5790824E1A3FCDFB0053E636 /* RQShineLabel.h */,
+				5790824F1A3FCDFB0053E636 /* RQShineLabel.m */,
+				579082541A3FDD1F0053E636 /* SendInfoView.h */,
+				579082551A3FDD1F0053E636 /* SendInfoView.m */,
+			);
+			name = MailView;
+			sourceTree = "<group>";
+		};
 		57BBA6871A3C3B99004E0D33 /* EditView */ = {
 			isa = PBXGroup;
 			children = (
@@ -964,6 +997,7 @@
 				57D2497A1A3841160009910F /* TitleView.m */,
 				57BBA68B1A3C48E7004E0D33 /* RYImageView.h */,
 				57BBA68C1A3C48E7004E0D33 /* RYImageView.m */,
+				579082471A3FCD4F0053E636 /* MailView */,
 				57D5C0181A3EDD780092F77E /* PeronEditVIew */,
 				57C962B81A3D7A900026B37C /* PersonCenter */,
 				57CCAC3A1A3AC2A200ADCDE1 /* ValidateView */,
@@ -1907,6 +1941,7 @@
 		57D248211A3834E30009910F /* UpStatus */ = {
 			isa = PBXGroup;
 			children = (
+				579082461A3FCCDE0053E636 /* Upstatus.h */,
 				57D248261A38356D0009910F /* UpstatusModel.h */,
 				57D248271A38356D0009910F /* UpstatusModel.m */,
 				57D248281A38356D0009910F /* UpstatusOperation.h */,
@@ -2105,8 +2140,10 @@
 				57D2473E1A37E5340009910F /* UIImage+GIF.m in Sources */,
 				57D2483E1A3836340009910F /* TokenOperation.m in Sources */,
 				57D247001A37E5340009910F /* QBasePushOperation.m in Sources */,
+				5790824D1A3FCDD80053E636 /* ScratchView.m in Sources */,
 				57D247121A37E5340009910F /* AFSecurityPolicy.m in Sources */,
 				57D246121A37E4990009910F /* MosaicDataView.m in Sources */,
+				579082561A3FDD1F0053E636 /* SendInfoView.m in Sources */,
 				57BBA68D1A3C48E7004E0D33 /* RYImageView.m in Sources */,
 				57D246F71A37E5340009910F /* QBaseViewController+KeyBoardObserver.m in Sources */,
 				57D247FC1A381C240009910F /* View+MASAdditions.m in Sources */,
@@ -2146,6 +2183,7 @@
 				57D249591A38392F0009910F /* MyMessagesModel.m in Sources */,
 				57D246F41A37E5340009910F /* CustomPushHandle.m in Sources */,
 				57D2474B1A37E5DA0009910F /* RYViewController.m in Sources */,
+				579082501A3FCDFB0053E636 /* RQShineLabel.m in Sources */,
 				57D2471E1A37E5340009910F /* FCCurrentLocationGeocoder.m in Sources */,
 				57D247071A37E5340009910F /* NSObject+QBaseNetworkObserver.m in Sources */,
 				57D247271A37E5340009910F /* JSONKit.m in Sources */,
@@ -2154,6 +2192,7 @@
 				57D2470D1A37E5340009910F /* QBaseUserInfo.m in Sources */,
 				57BBA6901A3C4BF1004E0D33 /* EditButtonsView.m in Sources */,
 				57CCAC2D1A3A85F000ADCDE1 /* PersonEditViewController.m in Sources */,
+				579082531A3FCE1B0053E636 /* STScratchView.m in Sources */,
 				57D2472D1A37E5340009910F /* JSONAPI.m in Sources */,
 				57D247F41A381C240009910F /* MASCompositeConstraint.m in Sources */,
 				57CCAC4B1A3ADED300ADCDE1 /* AlertContentView.m in Sources */,
@@ -2216,6 +2255,7 @@
 				57D248061A38290D0009910F /* RYScrollView.m in Sources */,
 				57D2471A1A37E5340009910F /* FICImageTable.m in Sources */,
 				57D6047B1A39785800168910 /* IndexBlurView.m in Sources */,
+				5790824A1A3FCD7E0053E636 /* ANBackImageView.m in Sources */,
 				57D604731A396D3C00168910 /* SVProgressHUD.m in Sources */,
 				57D2497B1A3841160009910F /* TitleView.m in Sources */,
 				57D248561A3837240009910F /* LoginOperation.m in Sources */,

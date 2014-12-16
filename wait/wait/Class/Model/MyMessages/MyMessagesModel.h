@@ -47,4 +47,6 @@
 @property (nonatomic, copy)NSString *width;
 //  height
 @property (nonatomic, copy)NSString *height;
+
+- (NSMutableArray *)JsonParserWithSend:(NSDictionary*)responseData;
 @end

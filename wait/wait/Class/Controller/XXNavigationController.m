@@ -8,6 +8,7 @@
 
 #import "XXNavigationController.h"
 #import "UMFeedback.h"
+#import "STScratchView.h"
 
 #define KEY_WINDOW  [[UIApplication sharedApplication]keyWindow]
 #define MainScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -161,6 +162,18 @@ static CGFloat min_distance = 100;// 最小回弹距离
     [super popViewControllerAnimated:animated];
 }
 
+#pragma mark - Gesture Recognizer -
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    
+    if ([touch.view isKindOfClass:[STScratchView class]]){
+        
+        return NO;
+        
+    }
+    
+    return YES;
+    
+}
 - (void)paningGestureReceive:(UIPanGestureRecognizer *)recoginzer
 {
     // If the viewControllers has only one vc or disable the interaction, then return.

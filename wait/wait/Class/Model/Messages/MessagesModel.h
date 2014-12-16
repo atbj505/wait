@@ -53,4 +53,5 @@
 @property (nonatomic, copy)NSString *nickName;
 //  未读0/已读1
 @property (nonatomic, assign)NSUInteger status;
+- (NSMutableArray *)JsonParserWithReceive:(NSDictionary*)responseData;
 @end

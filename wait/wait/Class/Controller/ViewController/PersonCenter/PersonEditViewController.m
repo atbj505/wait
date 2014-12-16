@@ -96,6 +96,125 @@ static NSString *identifier = @"cellIdentifier";
     }
 }
 - (void)showAlertViewWith:(NSIndexPath*)indexPath{
+    NSDictionary *dic =[[QBaseUserInfo sharedQBaseUserInfo]userInfo];
+    NSString *uid = [dic objectForKey:@"UID"];
+    switch (indexPath.row) {
+        case 0:
+        {
+            AlertContentView *view = [[AlertContentView alloc]initWithNickView:CGRectMake(0, 0, 200, 30)];
+            [PXAlertView showAlertWithTitle:@"昵称" message:nil cancelTitle:@"取消" otherTitle:@"确定" contentView:view completion:^(BOOL cancelled, NSInteger buttonIndex) {
+                if (buttonIndex == 1) {
+                    [self checkNickName:view.firstTextField.text];
+                }
+            }];
+        }
+            
+            break;
+        case 2:
+        {
+            [PXAlertView showAlertWithTitle:@"修改性别" message:nil cancelTitle:@"取消" otherTitles:@[@"男",@"女"] completion:^(BOOL cancelled, NSInteger buttonIndex) {
+                if (buttonIndex == 1) {
+                    self.model.sex = 0;
+                    NSDictionary *params = @{
+                                             @"key":@"sex",
+                                             @"value":@(0),
+                                             @"uid":uid
+                                             };
+                    [self receiveUpValiOperationWithParams:params];
+                } else if (buttonIndex == 2){
+                    self.model.sex = 1;
+                    NSDictionary *params = @{
+                                             @"key":@"sex",
+                                             @"value":@(1),
+                                             @"uid":uid
+                                             };
+                    [self receiveUpValiOperationWithParams:params];
+                }
+            }];
+        }
+            break;
+        case 3:
+        {
+            AlertContentView *view = [[AlertContentView alloc]initWithNameView:CGRectMake(0, 0, 200, 30)];
+            [PXAlertView showAlertWithTitle:@"姓名" message:nil cancelTitle:@"取消" otherTitle:@"确定" contentView:view completion:^(BOOL cancelled, NSInteger buttonIndex) {
+                
+            }];
+        }
+            
+            break;
+        default:
+            break;
+    }
+}
+- (void)checkNickName:(NSString *)string{
+    NSDictionary *dic =[[QBaseUserInfo sharedQBaseUserInfo]userInfo];
+    NSString *uid = [dic objectForKey:@"UID"];
+    if (string.length > 15) {
+        [PXAlertView showAlertWithTitle:@"昵称不能大于15字"];
+    }else if ([string isEqualToString:@""]){
+        [PXAlertView showAlertWithTitle:@"昵称不能为空"];
+    }else{
+        NSDictionary *params = @{
+                                 @"key":@"nickName",
+                                 @"value":string,
+                                 @"uid":uid
+                                 };
+        [self receiveUpValiOperationWithParams:params];
+    }
+}
+- (void)checkName:(NSString *)string{
+    NSDictionary *dic =[[QBaseUserInfo sharedQBaseUserInfo]userInfo];
+    NSString *uid = [dic objectForKey:@"UID"];
+    NSDictionary *params = @{
+                             @"key":@"userName",
+                             @"value":string,
+                             @"uid":uid
+                             };
+    [self receiveUpValiOperationWithParams:params];
     
+}
+#pragma mark -
+#pragma mark 个人信息修改网络请求
+- (void)receiveUpValiOperationWithParams:(NSDictionary *)params{
+    UpValiOperation *operation = [UpValiOperation operationWithDelegate:self];
+    operation.params = params;
+    [operation start];
+    [SVProgressHUD showInView:self.view];
+}
+#pragma mark -
+#pragma mark 网络请求成功回调
+- (void)netOperationDidFinish:(QBaseNetOperation *)operation{
+    [SVProgressHUD dismiss];
+    if ([operation isKindOfClass:[UpValiOperation class]]) {
+        NSString *result = [operation.responseData objectForKey:@"success"];
+        if ([result isEqualToString:@"0"]){
+            if ([[operation.params objectForKey:@"key"] isEqualToString:@"sex"]) {
+                self.model.sex = [result integerValue];
+                [PXAlertView showAlertWithTitle:@"修改成功"];
+                [self.editTableView reloadData];
+            }else{
+                [PXAlertView showAlertWithTitle:@"修改失败"];
+            }
+        }else if ([[operation.params objectForKey:@"key"]  isEqualToString:@"nickName"]){
+            self.model.nickName = result;
+            [PXAlertView showAlertWithTitle:@"修改成功"];
+            [self.editTableView reloadData];
+        }else if ([[operation.params objectForKey:@"key"] isEqualToString:@"userName"]){
+            self.model.userName = result;
+            [PXAlertView showAlertWithTitle:@"修改成功"];
+            [self.editTableView reloadData];
+        }else if ([[operation.params objectForKey:@"key"] isEqualToString:@"sex"]){
+            self.model.sex = [result integerValue];
+            [PXAlertView showAlertWithTitle:@"修改成功"];
+            [self.editTableView reloadData];
+        }
+    }
+}
+#pragma mark -
+#pragma mark 网络请求失败回调
+- (void)netOperationDidFailed:(QBaseNetOperation *)operation{
+    NSLog(@"%@,%@,%@",operation.error,operation.responseData,operation.url);
+    [SVProgressHUD dismiss];
+    [PXAlertView showAlertWithTitle:@"网络错误 修改失败"];
 }
 @end

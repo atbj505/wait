@@ -21,6 +21,17 @@
     }
     return self;
 }
+-(instancetype)initWithNameView:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {
+        UILabel *label = [self addLabel:@"姓名"];
+        [self addSubview:label];
+        
+        self.firstTextField = [self addTextField:@"请输入姓名"];
+        [self addSubview:self.firstTextField];
+    }
+    return self;
+}
 - (UILabel*)addLabel:(NSString *)string{
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
     label.font = FONT(15);
@@ -30,10 +41,10 @@
 }
 - (UITextField*)addTextField:(NSString *)string{
     UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(50, 0, 150, 30)];
-    textField.placeholder = @"最多可输入15个字";
+    textField.placeholder = string;
     textField.textColor = [UIColor whiteColor];
     [textField becomeFirstResponder];
-    textField.font = [UIFont fontWithName:@"Heiti SC" size:13];
+    textField.font = FONT(13);
     textField.borderStyle = UITextBorderStyleNone;
     return textField;
 }

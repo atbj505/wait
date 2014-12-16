@@ -15,4 +15,8 @@
  *  昵称视图
  */
 -(instancetype)initWithNickView:(CGRect)frame;
+/**
+ *  姓名视图
+ */
+-(instancetype)initWithNameView:(CGRect)frame;
 @end
